@@ -1,9 +1,17 @@
 -- Copyright 2008 Steven Barth <steven@midlink.org>
 -- Copyright 2008-2011 Jo-Philipp Wich <jow@openwrt.org>
 -- Licensed to the public under the Apache License 2.0.
+local state_msg = ""
+local running=(luci.sys.call("pidof miniupnpd > /dev/null") == 0)
+
+if running then
+	state_msg = "<b><font color=\"green\">" .. translate("状态：upnp 运行中") .. "</font></b>"
+else
+	state_msg = "<b><font color=\"red\">" .. translate("状态：upnp 未运行") .. "</font></b>"
+end
 
 m = Map("upnpd", luci.util.pcdata(translate("Universal Plug & Play")),
-	translate("UPnP allows clients in the local network to automatically configure the router."))
+	translate("UPnP allows clients in the local network to automatically configure the router.").. state_msg)
 
 m:section(SimpleSection).template  = "upnp_status"
 
@@ -34,6 +42,9 @@ s:taboption("general", Flag, "enable_natpmp", translate("Enable NAT-PMP function
 
 s:taboption("general", Flag, "secure_mode", translate("Enable secure mode"),
 	translate("Allow adding forwards only to requesting ip addresses")).default = "1"
+
+s:taboption("general", Flag, "igdv1", translate("Enable IGDv1 mode"),
+	translate("Advertise as IGDv1 device instead of IGDv2")).default = "0"
 
 s:taboption("general", Flag, "log_output", translate("Enable additional logging"),
 	translate("Puts extra debugging information into the system log"))
@@ -71,7 +82,7 @@ pu = s:taboption("advanced", Value, "presentation_url", translate("Presentation 
 pu.placeholder = "http://192.168.1.1/"
 
 lf = s:taboption("advanced", Value, "upnp_lease_file", translate("UPnP lease file"))
-lf.placeholder = "/var/log/upnp.leases"
+lf.placeholder = "/var/run/miniupnpd.leases"
 
 
 s2 = m:section(TypedSection, "perm_rule", translate("MiniUPnP ACLs"),

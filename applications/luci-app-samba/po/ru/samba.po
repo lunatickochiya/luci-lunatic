@@ -26,6 +26,9 @@ msgstr ""
 msgid "Allowed users"
 msgstr "Разрешенные пользователи"
 
+msgid "Browseable"
+msgstr "Виден в списке доступных ресурсов"
+
 msgid "Create mask"
 msgstr "Создать маску"
 
@@ -61,6 +64,13 @@ msgstr "Сетевые ресурсы"
 
 msgid "Path"
 msgstr "Путь"
+
+msgid ""
+"Please add directories to share. Each directory refers to a folder on a "
+"mounted device."
+msgstr ""
+"Добавьте папки для совместного доступа. Каждая папка - соответствует разделу "
+"на подключенном устройстве."
 
 msgid "Read-only"
 msgstr "Только для чтения"
