@@ -71,6 +71,7 @@ for i, v in ipairs(p) do
 end
 
 s:option(Flag, "masq", translate("Masquerading"))
+s:option(Flag, "fullcone", translate("Full Cone"))
 s:option(Flag, "mtu_fix", translate("MSS clamping"))
 
 return m
