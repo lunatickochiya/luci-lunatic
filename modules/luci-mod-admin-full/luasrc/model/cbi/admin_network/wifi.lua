@@ -227,6 +227,10 @@ if hwtype == "mac80211" then
 	else
 		s:taboption("advanced", Value, "country", translate("Country Code"), translate("Use ISO/IEC 3166 alpha2 country codes."))
 	end
+	
+		legacyrates = s:taboption("advanced", Flag, "legacy_rates", translate("Allow legacy 802.11b rates"))
+	legacyrates.rmempty = false
+	legacyrates.default = "0"
 
 	s:taboption("advanced", Value, "distance", translate("Distance Optimization"),
 		translate("Distance to farthest network member in meters."))
@@ -245,6 +249,16 @@ if hwtype == "mac80211" then
 
 	s:taboption("advanced", Value, "frag", translate("Fragmentation Threshold"))
 	s:taboption("advanced", Value, "rts", translate("RTS/CTS Threshold"))
+	s:taboption("advanced", Flag, "noscan", translate("Force 40MHz mode"),
+	translate("Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!")).optional = true
+
+	vendor_vht = s:taboption("general", Flag, "vendor_vht", translate("Enable 256-QAM"),translate("802.11n 2.4Ghz Only"))
+	vendor_vht.default = vendor_vht.disabled
+	  
+	beacon_int = s:taboption("advanced", Value, "beacon_int", translate("Beacon Interval"))
+	beacon_int.optional = true
+	beacon_int.placeholder = 100
+	beacon_int.datatype = "range(15,65535)"
 end
 
 
@@ -541,6 +555,18 @@ if hwtype == "mac80211" then
 
 	ifname = s:taboption("advanced", Value, "ifname", translate("Interface name"), translate("Override default interface name"))
 	ifname.optional = true
+	
+	short_preamble = s:taboption("advanced", Flag, "short_preamble", translate("Short Preamble"))
+	short_preamble.default = short_preamble.disabled
+
+	dtim_period = s:taboption("advanced", Value, "dtim_period", translate("DTIM Interval"), translate("Delivery Traffic Indication Message Interval"))
+	dtim_period.optional = true
+	dtim_period.placeholder = 2
+	dtim_period.datatype = "range(1,255)"
+
+	disassoc_low_ack = s:taboption("advanced", Flag, "disassoc_low_ack", translate("Disassociate On Low Acknowledgement"),
+		translate("Allow AP mode to disconnect STAs based on low ACK condition"))
+	disassoc_low_ack.default = disassoc_low_ack.disabled
 end
 
 
