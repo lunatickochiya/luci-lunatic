@@ -22,6 +22,7 @@ function index()
 	-- Empty services menu to be populated by addons
 	entry({"admin", "services"}, firstchild(), _("Services"), 40).index = true
 
+	entry({"admin", "Free_Memory"}, call("Free_Memory"), nil)
 	entry({"admin", "logout"}, call("action_logout"), _("Logout"), 90)
 end
 
@@ -41,4 +42,10 @@ function action_logout()
 	end
 
 	luci.http.redirect(luci.dispatcher.build_url())
+end
+
+function Free_Memory()
+
+ luci.util.exec("echo 3 > /proc/sys/vm/drop_caches")
+ luci.http.redirect(luci.dispatcher.build_url("admin", "status", "overview"))
 end
