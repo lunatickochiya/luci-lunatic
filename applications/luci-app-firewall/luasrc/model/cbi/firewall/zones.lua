@@ -20,6 +20,8 @@ s:option(Flag, "syn_flood", translate("Enable SYN-flood protection"))
 
 o = s:option(Flag, "drop_invalid", translate("Drop invalid packets"))
 
+s:option(Flag, "fullcone", translate("Enable FullCone NAT"))
+
 p = {
 	s:option(ListValue, "input", translate("Input")),
 	s:option(ListValue, "output", translate("Output")),
@@ -71,7 +73,6 @@ for i, v in ipairs(p) do
 end
 
 s:option(Flag, "masq", translate("Masquerading"))
-s:option(Flag, "fullcone", translate("Full Cone"))
 s:option(Flag, "mtu_fix", translate("MSS clamping"))
 
 return m

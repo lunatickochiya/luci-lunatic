@@ -89,7 +89,6 @@ for i, v in ipairs(p) do
 end
 
 s:taboption("general", Flag, "masq", translate("Masquerading"))
-s:taboption("general", Flag, "fullcone", translate("Full Cone"))
 s:taboption("general", Flag, "mtu_fix", translate("MSS clamping"))
 
 net = s:taboption("general", Value, "network", translate("Covered networks"))
