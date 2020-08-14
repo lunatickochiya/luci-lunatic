@@ -126,5 +126,36 @@ function proto.cfgvalue(self, section)
 	return val or "udp"
 end
 
+local o = m:section(TypedSection, "openvpnclient", translate("An easy config OpenVPN Client Web-UI"))
+o.anonymous = true
+o.addremove = false
+
+o:tab("code",  translate("自定义客户端代码"))
+local conf = "/etc/openvpn/my-vpn.conf"
+local NXFS = require "nixio.fs"
+d = o:taboption("code", TextValue, "conf")
+d.description = translate("想要加入到.ovpn文件里的代码,如果使用帐号密码验证则需要加入auth-user-pass pass.txt")
+d.rows = 13
+d.wrap = "off"
+d.cfgvalue = function(self, section)
+	return NXFS.readfile(conf) or ""
+end
+d.write = function(self, section, value)
+	NXFS.writefile(conf, value:gsub("\r\n", "\n"))
+end
+
+o:tab("pwdcode",  translate("帐号密码"))
+local pwdconf = "/etc/openvpn/pass.txt"
+local NXFS = require "nixio.fs"
+d = o:taboption("pwdcode", TextValue, "pwdconf")
+d.description = translate("编辑 pass.txt")
+d.rows = 13
+d.wrap = "off"
+d.cfgvalue = function(self, section)
+	return NXFS.readfile(pwdconf) or ""
+end
+d.write = function(self, section, value)
+	NXFS.writefile(pwdconf, value:gsub("\r\n", "\n"))
+end
 
 return m

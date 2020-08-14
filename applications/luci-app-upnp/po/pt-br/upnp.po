@@ -29,9 +29,6 @@ msgstr "Redirecionamentos UPnP Ativos"
 msgid "Advanced Settings"
 msgstr "Configurações Avançadas"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr ""
 "Permite adicionar encaminhamento apenas para o endereço IP requisitante"
@@ -60,20 +57,14 @@ msgstr "Coletando dados..."
 msgid "Comment"
 msgstr "Comentário"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Apague o Redirecionamento"
 
 msgid "Device UUID"
 msgstr "UUID do Dispositivo"
 
 msgid "Downlink"
 msgstr "Velocidade de recebimento do enlace (downlink)"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "Habilite a função NAT-PMP"
@@ -153,9 +144,6 @@ msgstr "Velocidade de envio do enlace (uplink)"
 
 msgid "Value in KByte/s, informational only"
 msgstr "Valores em KByte/s, apenas informativas"
-
-#~ msgid "Delete Redirect"
-#~ msgstr "Apague o Redirecionamento"
 
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "

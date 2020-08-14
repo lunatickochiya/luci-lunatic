@@ -25,9 +25,6 @@ msgstr "啓用UPnP從導"
 msgid "Advanced Settings"
 msgstr "進階設定"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr "只允許請求的IP位址新增從導機制"
 
@@ -55,20 +52,14 @@ msgstr "收集數據中..."
 msgid "Comment"
 msgstr "評論"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "刪除從導"
 
 msgid "Device UUID"
 msgstr "設備UUID獨立識別碼"
 
 msgid "Downlink"
 msgstr "下載"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "啓用蘋果NAT-PMP傳輸埠對應通訊協定功能"
@@ -146,9 +137,6 @@ msgstr "上傳"
 
 msgid "Value in KByte/s, informational only"
 msgstr "僅採用 KByte/s值單位表示"
-
-#~ msgid "Delete Redirect"
-#~ msgstr "刪除從導"
 
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "

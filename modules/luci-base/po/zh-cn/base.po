@@ -13,9 +13,6 @@ msgstr ""
 "X-Generator: Poedit 2.0\n"
 "Language-Team: \n"
 
-msgid "%.1f dB"
-msgstr ""
-
 msgid "%s is untagged in multiple VLANs!"
 msgstr "%s 在多个 VLAN 中未标记"
 
@@ -948,9 +945,6 @@ msgstr "下载并安装软件包"
 msgid "Download backup"
 msgstr "下载备份"
 
-msgid "Downstream SNR offset"
-msgstr ""
-
 msgid "Dropbear Instance"
 msgstr "Dropbear 实例"
 
@@ -1004,6 +998,12 @@ msgstr "启用"
 
 msgid "Enable <abbr title=\"Spanning Tree Protocol\">STP</abbr>"
 msgstr "开启 <abbr title=\"生成树协议\">STP</abbr>"
+
+msgid ""
+"Enable <abbr title=\"Internet Group Management Protocol\">IGMP</abbr> "
+"snooping"
+msgstr ""
+"启用 <abbr title=\"Internet Group Management Protocol\">IGMP</abbr> 嗅探"
 
 msgid "Enable HE.net dynamic endpoint update"
 msgstr "启用 HE.net 动态终端更新"
@@ -1611,9 +1611,6 @@ msgstr "无效的 VLAN ID！只允许唯一的 ID。"
 msgid "Invalid username and/or password! Please try again."
 msgstr "无效的用户名和/或密码！请重试。"
 
-msgid "Isolate Clients"
-msgstr ""
-
 msgid ""
 "It appears that you are trying to flash an image that does not fit into the "
 "flash memory, please verify the image file!"
@@ -2152,9 +2149,6 @@ msgstr "混淆组密码"
 msgid "Obfuscated Password"
 msgstr "混淆密码"
 
-msgid "Obtain IPv6-Address"
-msgstr "获取 IPv6 地址"
-
 msgid "Off-State Delay"
 msgstr "关闭时间"
 
@@ -2308,7 +2302,7 @@ msgid "PIN"
 msgstr "PIN"
 
 msgid "PMK R1 Push"
-msgstr "PMK R1 Push"
+msgstr "R1 推送 PMK"
 
 msgid "PPP"
 msgstr "PPP"
@@ -3932,3 +3926,147 @@ msgstr "« 后退"
 
 #~ msgid "VLAN Interface"
 #~ msgstr "VLAN接口"
+
+msgid "Depends on factory set"
+msgstr "依赖于出厂设置值"
+
+msgid "Choose mtdblock"
+msgstr "选择MTD分区"
+
+msgid "Download mtdblock"
+msgstr "下载MTD分区"
+
+msgid "Save mtdblock"
+msgstr "备份MTD"
+
+msgid "Save mtdblock contents"
+msgstr "备份MTD内容"
+
+msgid "Click \"Save mtdblock\" to download specified mtdblock file. (NOTE: THIS FEATURE IS FOR PROFESSIONALS! )"
+msgstr "点击\"备份MTD\"可以下载指定分区数据.(注意！仅提供给专业人士使用！)"
+
+msgid "Enable The 802.11k standard provides information to discover the best available access point"
+msgstr "启用 802.11k 自动寻找发现最佳可用接入点的信息"
+
+msgid "Enable neighbor report via radio measurements"
+msgstr "启用无线电测量邻居报告"
+
+msgid "Enable beacon report via radio measurements"
+msgstr "启用无线电测量信标报告"
+
+msgid "Enable 802.11v allows client devices to exchange information about the network topology,tating overall improvement of the wireless network."
+msgstr "启用 802.11v 将允许客户端设备交换有关网络拓扑的信息，从而全面改善无线网络漫游"
+
+msgid "extended sleep mode for stations"
+msgstr "扩展无线休眠节能模式"
+
+msgid "BSS Transition Management"
+msgstr "BSS 传输管理"
+
+msgid "UTC time at which the TSF timer is 0"
+msgstr "TSF计时器为0的UTC时间"
+
+msgid "Time advertisement"
+msgstr "广播同步时间"
+
+msgid "time zone"
+msgstr "时区"
+
+msgid "Local time zone as specified in 8.3 of IEEE Std 1003.1-2004"
+msgstr "本地时区采用 IEEE Std 1003.1-2004 的 8.3 格式（例如 UTC8）"
+
+msgid "Enable 256-QAM"
+msgstr "启用 256-QAM"
+
+msgid "802.11n 2.4Ghz Only"
+msgstr "只适合 802.11n 2.4Ghz"
+
+msgid "Generate PMK locally"
+msgstr "本地生成 PMK"
+
+msgid ""
+"List of <abbr title=\"Domain Name System\">DNS</abbr> servers to forward "
+"requests to"
+msgstr ""
+"将请求转发到的 <abbr title=\"Domain Name System\">DNS</abbr> 服务器列表"
+
+msgid ""
+"List of R0KHs in the same Mobility Domain. <br />Format: MAC-address,NAS-"
+"Identifier,128-bit key as hex string. <br />This list is used to map R0KH-ID "
+"(NAS Identifier) to a destination MAC address when requesting PMK-R1 key "
+"from the R0KH that the STA used during the Initial Mobility Domain "
+"Association."
+msgstr ""
+"同一移动域中的 R0KH 列表。<br />格式：MAC 地址，NAS 标识符，128 位密钥（十六"
+"进制字符串）。<br />在从初始移动域关联期间使用的 R0KH 中请求 PMK-R1 密钥时，"
+"该列表用于将 R0KH-ID（NAS 标识符）映射到目标 MAC 地址。"
+
+msgid ""
+"List of R1KHs in the same Mobility Domain. <br />Format: MAC-address,R1KH-ID "
+"as 6 octets with colons,128-bit key as hex string. <br />This list is used "
+"to map R1KH-ID to a destination MAC address when sending PMK-R1 key from the "
+"R0KH. This is also the list of authorized R1KHs in the MD that can request "
+"PMK-R1 keys."
+msgstr ""
+"同一移动域中的 R1KH 列表。<br />格式：MAC 地址，R1KH-ID（包含冒号的 6 个八位"
+"字节），128 位密钥（十六进制字符串）。<br />当从 R0KH 发送 PMK-R1 键时，此列"
+"表用于将 R1KH-ID 映射到目标 MAC 地址。这也是可以请求 PMK-R1 键的 MD 中授权的 "
+"R1KH 的列表。"
+
+msgid "R0 Key Lifetime"
+msgstr "R0 密钥生存期"
+
+msgid "R1 Key Holder"
+msgstr "R1 密钥持有者"
+
+msgid "Enable key reinstallation (KRACK) countermeasures"
+msgstr "启用密钥重新安装（KRACK）对策"
+
+msgid ""
+"Complicates key reinstallation attacks on the client side by disabling "
+"retransmission of EAPOL-Key frames that are used to install keys. This "
+"workaround might cause interoperability issues and reduced robustness of key "
+"negotiation especially in environments with heavy traffic load."
+msgstr ""
+"通过禁用用于安装密钥的 EAPOL-Key 帧的重新传输，来增加客户端密钥重安装攻击的复"
+"杂度。此解决方法可能会导致互操作性问题，并降低密钥协商的可靠性，特别是在流量"
+"负载较重的环境中。
+
+msgid "FT protocol"
+msgstr "FT 协议"
+
+msgid "Isolate Clients"
+msgstr "隔离客户端"
+
+msgid "Allow legacy 802.11b rates"
+msgstr "允许传统的 802.11b 速率"
+
+msgid "Force 40MHz mode"
+msgstr "强制 40MHz 模式"
+
+msgid ""
+"Always use 40MHz channels even if the secondary channel overlaps. Using this "
+"option does not comply with IEEE 802.11n-2009!"
+msgstr ""
+"即使辅助信道重叠，也始终使用 40MHz 信道。使用此选项不符合 IEEE 802.11n-2009！"
+
+msgid "Beacon Interval"
+msgstr "Beacon 间隔"
+
+msgid "DTIM Interval"
+msgstr "DTIM 间隔"
+
+msgid "Disassociate On Low Acknowledgement"
+msgstr "在低 Ack 应答时断开连接"
+
+msgid "Allow AP mode to disconnect STAs based on low ACK condition"
+msgstr "允许 AP 模式时在 low ACK 的情况下断开无线终端"
+
+msgid "Delivery Traffic Indication Message Interval"
+msgstr "发送流量指示消息间隔"
+
+msgid "Processor"
+msgstr "处理器"
+
+msgid "Architecture"
+msgstr "构架"

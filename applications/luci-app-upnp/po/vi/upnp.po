@@ -27,9 +27,6 @@ msgstr ""
 msgid "Advanced Settings"
 msgstr ""
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr ""
 
@@ -57,10 +54,7 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
+msgid "Delete Redirect"
 msgstr ""
 
 msgid "Device UUID"
@@ -68,9 +62,6 @@ msgstr ""
 
 msgid "Downlink"
 msgstr "Downlink"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr ""

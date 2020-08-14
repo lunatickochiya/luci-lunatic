@@ -27,7 +27,7 @@ o.optional = true
 o.datatype = "uinteger"
 
 o = s:option(Value, "localip", translate("IP of listening side"))
-o.datatype = "ipaddr"
+o.datetype = "ipaddr"
 
 o = s:option(Value, "firstremoteip", translate("First remote IP"))
 o.datatype = "ipaddr"

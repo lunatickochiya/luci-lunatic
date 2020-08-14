@@ -29,9 +29,6 @@ msgstr "Redirecciones UPnP activas"
 msgid "Advanced Settings"
 msgstr "Configuración avanzada"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr "Permitir añadir redirecciones sólo a IPs que lo soliciten"
 
@@ -59,20 +56,14 @@ msgstr "Un momento..."
 msgid "Comment"
 msgstr "Comentario"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Borrar redirección"
 
 msgid "Device UUID"
 msgstr "UUID del dispositivo"
 
 msgid "Downlink"
 msgstr "Enlace para bajada"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "Activar la funcionalidad NAT-PMP"
@@ -153,15 +144,12 @@ msgstr "Enlace de subida"
 msgid "Value in KByte/s, informational only"
 msgstr "Valor en KBytes/s (sólo informativo)"
 
-#~ msgid "Delete Redirect"
-#~ msgstr "Borrar redirección"
-
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "
 #~ "router."
 #~ msgstr ""
-#~ "UPnP permite que los puestos de la red local configuren automáticamente "
-#~ "el router."
+#~ "UPnP permite que los puestos de la red local configuren automáticamente el "
+#~ "router."
 
 #~ msgid "enable"
 #~ msgstr "activar"

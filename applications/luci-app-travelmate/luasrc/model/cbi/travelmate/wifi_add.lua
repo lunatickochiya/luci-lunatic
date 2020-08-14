@@ -4,7 +4,7 @@
 local fs       = require("nixio.fs")
 local uci      = require("luci.model.uci").cursor()
 local http     = require("luci.http")
-local trmiface = uci:get("travelmate", "global", "trm_iface") or "trm_wwan"
+local trmiface = uci.get("travelmate", "global", "trm_iface") or "trm_wwan"
 local encr_psk = {"psk", "psk2", "psk-mixed"}
 local encr_wpa = {"wpa", "wpa2", "wpa-mixed"}
 
@@ -34,14 +34,18 @@ end
 wssid.datatype = "rangelength(1,32)"
 wssid.default = m.hidden.ssid or ""
 
+nobssid = m:field(Flag, "no_bssid", translate("Ignore BSSID"))
+if m.hidden.ssid == "" then
+	nobssid.default = nobssid.disabled
+else
+	nobssid.default = nobssid.enabled
+end
+
 bssid = m:field(Value, "bssid", translate("BSSID"),
 	translatef("The BSSID information '%s' is optional and only required for hidden networks", m.hidden.bssid or ""))
+bssid:depends("no_bssid", 0)
 bssid.datatype = "macaddr"
-if m.hidden.ssid == "" then
-	bssid.default = m.hidden.bssid or ""
-else
-	bssid.default = ""
-end
+bssid.default = m.hidden.bssid or ""
 
 if (tonumber(m.hidden.wep) or 0) == 1 then
 	encr = m:field(ListValue, "encryption", translate("Encryption"))

@@ -29,9 +29,6 @@ msgstr "Attiva reindirizzamento UPnP"
 msgid "Advanced Settings"
 msgstr "Opzioni Avanzate"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr "Permetti l'aggiunta della mappatura solo agli indirizzi IP richiedenti"
 
@@ -59,20 +56,14 @@ msgstr "Raccolgo i dati..."
 msgid "Comment"
 msgstr "Descrizione"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Cancella Mappatura"
 
 msgid "Device UUID"
 msgstr "UUID del dispositivo"
 
 msgid "Downlink"
 msgstr "Downlink"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "Abilita il protocollo NAT-PMP"
@@ -152,9 +143,6 @@ msgstr "Uplink"
 
 msgid "Value in KByte/s, informational only"
 msgstr "Valori in KByte/s, (informativo)"
-
-#~ msgid "Delete Redirect"
-#~ msgstr "Cancella Mappatura"
 
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "

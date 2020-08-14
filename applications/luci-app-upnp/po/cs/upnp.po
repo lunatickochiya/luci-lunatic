@@ -27,9 +27,6 @@ msgstr "Aktivní přesměrování UPnP"
 msgid "Advanced Settings"
 msgstr "Pokročilé nastavení"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr "Povolit přesměrování pouze na dotazující ip adresy"
 
@@ -57,20 +54,14 @@ msgstr "Probíhá sběr dat.."
 msgid "Comment"
 msgstr "Komentář"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Odstranit přesměrování"
 
 msgid "Device UUID"
 msgstr "UUID zařízení"
 
 msgid "Downlink"
 msgstr "Downlink"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "Povolit funkčnost NAT-PMP"
@@ -150,14 +141,10 @@ msgstr "Uplink"
 msgid "Value in KByte/s, informational only"
 msgstr "Pouze informační hodnoty (v KByte/s)"
 
-#~ msgid "Delete Redirect"
-#~ msgstr "Odstranit přesměrování"
-
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "
 #~ "router."
-#~ msgstr ""
-#~ "UPnP umožňuje klientům v místní síti automaticky nakonfigurovat router."
+#~ msgstr "UPnP umožňuje klientům v místní síti automaticky nakonfigurovat router."
 
 #~ msgid "enable"
 #~ msgstr "povolit"

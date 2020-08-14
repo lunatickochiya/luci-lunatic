@@ -8,9 +8,9 @@ local util     = require("luci.util")
 local nw       = require("luci.model.network").init()
 local fw       = require("luci.model.firewall").init()
 local dump     = util.ubus("network.interface", "dump", {})
-local trmiface = uci:get("travelmate", "global", "trm_iface") or "trm_wwan"
-local trminput = uci:get("travelmate", "global", "trm_rtfile") or "/tmp/trm_runtime.json"
-local uplink   = uci:get("network", trmiface) or ""
+local trmiface = uci.get("travelmate", "global", "trm_iface") or "trm_wwan"
+local trminput = uci.get("travelmate", "global", "trm_rtfile") or "/tmp/trm_runtime.json"
+local uplink   = uci.get("network", trmiface) or ""
 local parse    = json.parse(fs.readfile(trminput) or "")
 
 m = Map("travelmate", translate("Travelmate"),
@@ -177,8 +177,8 @@ e3.rmempty = false
 
 e4 = e:option(Value, "trm_maxretry", translate("Connection Limit"),
 	translate("Retry limit to connect to an uplink."))
-e4.default = 3
-e4.datatype = "range(1,10)"
+e4.default = 66
+e4.datatype = "range(1,99)"
 e4.rmempty = false
 
 e5 = e:option(Value, "trm_minquality", translate("Signal Quality Threshold"),

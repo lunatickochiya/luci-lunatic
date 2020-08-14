@@ -21,7 +21,9 @@ end
 function act_status()
 	local uci = luci.model.uci.cursor()
 	local lease_file = uci:get("upnpd", "config", "upnp_lease_file")
-
+	
+	local ipv4_hints = luci.sys.net.ipv4_hints()
+	
 	local ipt = io.popen("iptables --line-numbers -t nat -xnvL MINIUPNPD 2>/dev/null")
 	if ipt then
 		local upnpf = lease_file and io.open(lease_file, "r")
@@ -39,11 +41,20 @@ function act_status()
 					num     = tonumber(num)
 					extport = tonumber(extport)
 					intport = tonumber(intport)
-
+					
 					if upnpf then
 						local uln = upnpf:read("*l")
 						if uln then descr = uln:match(string.format("^%s:%d:%s:%d:%%d*:(.*)$", proto:upper(), extport, intaddr, intport)) end
 						if not descr then descr = "" end
+					end
+
+					local host_hint, _, e
+
+					for _,e in pairs(ipv4_hints) do
+						if e[1] == intaddr then
+							host_hint = e[2]
+							break
+						end
 					end
 
 					fwd[#fwd+1] = {
@@ -51,6 +62,7 @@ function act_status()
 						proto   = proto:upper(),
 						extport = extport,
 						intaddr = intaddr,
+						host_hint = host_hint,
 						intport = intport,
 						descr = descr
 					}
@@ -76,7 +88,7 @@ function act_delete(num)
 
 		local lease_file = uci:get("upnpd", "config", "upnp_lease_file")
 		if lease_file and nixio.fs.access(lease_file) then
-			luci.sys.call("sed -i -e '%dd' %s" %{ idx, luci.util.shellquote(lease_file) })
+			luci.sys.call("sed -i -e '%dd' %q" %{ idx, lease_file })
 		end
 
 		luci.http.status(200, "OK")

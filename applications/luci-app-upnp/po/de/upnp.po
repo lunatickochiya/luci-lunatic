@@ -29,9 +29,6 @@ msgstr "Aktive UPnP-Weiterleitungen"
 msgid "Advanced Settings"
 msgstr "Erweiterte Einstellungen"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr "Nur Weiterleitungen zurück zum anfordernden Client zulassen"
 
@@ -59,20 +56,14 @@ msgstr "Sammle Daten..."
 msgid "Comment"
 msgstr "Kommentar"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Weiterleitung löschen"
 
 msgid "Device UUID"
 msgstr "Geräte-UUID"
 
 msgid "Downlink"
 msgstr "Downlink"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "NAT-PMP Funktionalität aktivieren"
@@ -153,15 +144,12 @@ msgstr "Uplink"
 msgid "Value in KByte/s, informational only"
 msgstr "Wert in Kilobyte/s, nur informativ"
 
-#~ msgid "Delete Redirect"
-#~ msgstr "Weiterleitung löschen"
-
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "
 #~ "router."
 #~ msgstr ""
-#~ "UPnP ermöglicht die automatische Konfiguration des Routers durch Clients "
-#~ "im lokalen Netzwerk."
+#~ "UPnP ermöglicht die automatische Konfiguration des Routers durch Clients im "
+#~ "lokalen Netzwerk."
 
 #~ msgid "enable"
 #~ msgstr "aktivieren"

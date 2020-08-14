@@ -28,9 +28,6 @@ msgstr "Redirecturi active UPnP"
 msgid "Advanced Settings"
 msgstr "Setari avansate"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr "Permite adaugarea forward-urilor doar catre adresele ip solicitante"
 
@@ -58,20 +55,14 @@ msgstr "Colecteaza date.."
 msgid "Comment"
 msgstr "Comentariu"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Sterge redirect"
 
 msgid "Device UUID"
 msgstr "UUID al dispozitivului"
 
 msgid "Downlink"
 msgstr "Downlink"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "Activeaza functionalitatea NAT-PMP"
@@ -151,15 +142,11 @@ msgstr "Uplink"
 msgid "Value in KByte/s, informational only"
 msgstr "Valorea in KOcteti/s , doar informational"
 
-#~ msgid "Delete Redirect"
-#~ msgstr "Sterge redirect"
-
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "
 #~ "router."
 #~ msgstr ""
-#~ "UPNP permite clientulor din reteaua locala sa configureze automat "
-#~ "routerul."
+#~ "UPNP permite clientulor din reteaua locala sa configureze automat routerul."
 
 #~ msgid "enable"
 #~ msgstr "activeaza"

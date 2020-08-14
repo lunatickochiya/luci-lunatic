@@ -11,9 +11,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.6\n"
 
-msgid "%.1f dB"
-msgstr ""
-
 msgid "%s is untagged in multiple VLANs!"
 msgstr ""
 
@@ -940,9 +937,6 @@ msgstr ""
 msgid "Download backup"
 msgstr ""
 
-msgid "Downstream SNR offset"
-msgstr ""
-
 msgid "Dropbear Instance"
 msgstr ""
 
@@ -1594,9 +1588,6 @@ msgstr ""
 msgid "Invalid username and/or password! Please try again."
 msgstr ""
 
-msgid "Isolate Clients"
-msgstr ""
-
 msgid ""
 "It appears that you are trying to flash an image that does not fit into the "
 "flash memory, please verify the image file!"
@@ -2123,9 +2114,6 @@ msgid "Obfuscated Group Password"
 msgstr ""
 
 msgid "Obfuscated Password"
-msgstr ""
-
-msgid "Obtain IPv6-Address"
 msgstr ""
 
 msgid "Off-State Delay"

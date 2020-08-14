@@ -15,7 +15,7 @@
 
 					for (var j = 0; j < ports.length; j++)
 					{
-						var th = document.getElementById('portstatus-' + switches[i] + '-' + j);
+						var th = th0.parentNode.parentNode.childNodes[j+1];
 
 						if (!th)
 							continue;

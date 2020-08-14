@@ -23,6 +23,7 @@ function index()
 	entry({"admin", "services"}, firstchild(), _("Services"), 40).index = true
 
 	entry({"admin", "Free_Memory"}, call("Free_Memory"), nil)
+	entry({"admin", "reboot"}, call("action_reboot"), _("Reboot"), 80)
 	entry({"admin", "logout"}, call("action_logout"), _("Logout"), 90)
 end
 
@@ -46,4 +47,12 @@ function Free_Memory()
   
  luci.util.exec("echo 3 > /proc/sys/vm/drop_caches")
  luci.http.redirect(luci.dispatcher.build_url("admin", "status", "overview"))
+end
+
+function action_reboot()
+	local reboot = luci.http.formvalue("reboot")
+	luci.template.render("admin_system/reboot", {reboot=reboot})
+	if reboot then
+		luci.sys.reboot()
+	end
 end

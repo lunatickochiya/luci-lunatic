@@ -16,9 +16,9 @@
 
 	local sysinfo = luci.util.ubus("system", "info") or { }
 	local boardinfo = luci.util.ubus("system", "board") or { }
-	local cpuinfo = luci.sys.exec("cat /proc/cpuinfo") or { }
-	local processor = cpuinfo:match("system type\t+: ([^\n]+)") or { }
-	local march = cpuinfo:match("cpu model\t+: ([^\n]+)") or { }
+	local cpuinfo = luci.sys.exec("cat /proc/cpuinfo") or {}
+	local processor = cpuinfo:match("system type\t+: ([^\n]+)") or cpuinfo:match("model name\t+: ([^\n]+)") or { }
+	local march = cpuinfo:match("cpu model\t+: ([^\n]+)") or cpuinfo:match("Hardware\t+: ([^\n]+)") or { }
 	local unameinfo = nixio.uname() or { }
 
 	local meminfo = sysinfo.memory or {
@@ -110,7 +110,7 @@
 
 <%+header%>
 
-<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
+<script type="text/javascript" src="<%=resource%>/cbi.js?v=git-20.136.27016-6b99b03"></script>
 <script type="text/javascript">//<![CDATA[
 	function progressbar(v, m)
 	{
@@ -689,13 +689,12 @@
 			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%> /
 			<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)
 		</td></tr>
-		<tr><td width="33%"><%:主控芯片%></td><td><%=pcdata(processor or "?")%></td></tr>
-		<tr><td width="33%"><%:构架%></td><td><%=pcdata(march or "?")%></td></tr>
+		<tr><td width="33%"><%:Processor%></td><td><%=pcdata(processor or "?")%></td></tr>
+		<tr><td width="33%"><%:Architecture%></td><td><%=pcdata(march or "?")%></td></tr>
 		<tr><td width="33%"><%:Kernel Version%></td><td><%=unameinfo.release or "?"%></td></tr>
-		<tr><td width="33%"><%:固件信息%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件信息" value="<%:LunaticUrey_Build_With_Backports%>" onclick="window.open('http://'+window.location.host+'/updatelog.txt')" /></td></tr>
-		<tr><td width="33%"><%:使用说明%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="使用说明" value="<%:点击查看升级日志和使用说明%>" onclick="window.open('http://'+window.location.host+'/updatelog.txt')" /></td></tr>
-		<tr><td width="33%"><%:固件更新%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件更新" value="<%:加入群号：286754582%>" onclick="window.open('https://jq.qq.com/?_wv=1027&k=5wP6XuX')" /></td></tr>
 		<tr><td width="33%"><%:Local Time%></td><td id="localtime">-</td></tr>
+		<tr><td width="33%"><%:固件信息%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件信息" value="<%:LunaticUrey_Build_With_Backports%>" -</td></tr>
+		<tr><td width="33%"><%:固件更新%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件更新" value="<%:加入群号：286754582%>" onclick="window.open('https://jq.qq.com/?_wv=1027&k=5wP6XuX')" /></td></tr>
 		<tr><td width="33%"><%:Uptime%></td><td id="uptime">-</td></tr>
 		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
 	</table>
@@ -762,6 +761,7 @@
 	</table>
 </fieldset>
 
+<% if has_ipv6 then %>
 <fieldset class="cbi-section" style="display:none">
 	<legend><%:DHCPv6 Leases%></legend>
 
@@ -777,6 +777,7 @@
 		</tr>
 	</table>
 </fieldset>
+<% end %>
 <% end %>
 
 <% if has_dsl then %>

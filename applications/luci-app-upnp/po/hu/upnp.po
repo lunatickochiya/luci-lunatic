@@ -27,9 +27,6 @@ msgstr "Aktív UPnP átirányítások"
 msgid "Advanced Settings"
 msgstr "Haladó beállítások"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr ""
 "Kizárólag a kérést küldő IP címre történő továbbítás hozzáadásának "
@@ -59,20 +56,14 @@ msgstr "Adatok összegyűjtése..."
 msgid "Comment"
 msgstr "Megjegyzés"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Átirányítás törlése"
 
 msgid "Device UUID"
 msgstr "Eszköz UUID"
 
 msgid "Downlink"
 msgstr "Letöltés"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "NAT-PMP funkció engedélyezése"
@@ -153,15 +144,12 @@ msgstr "Feltöltés"
 msgid "Value in KByte/s, informational only"
 msgstr "Érték KByte/s-ban, csak tájékoztató jellegű"
 
-#~ msgid "Delete Redirect"
-#~ msgstr "Átirányítás törlése"
-
 #~ msgid ""
 #~ "UPNP allows clients in the local network to automatically configure the "
 #~ "router."
 #~ msgstr ""
-#~ "Az UPnP lehetővé teszi a hálózatban lévő ügyfelek számára hogy "
-#~ "automatikusan beállítsák a routert."
+#~ "Az UPnP lehetővé teszi a hálózatban lévő ügyfelek számára hogy automatikusan "
+#~ "beállítsák a routert."
 
 #~ msgid "enable"
 #~ msgstr "engedélyezés"

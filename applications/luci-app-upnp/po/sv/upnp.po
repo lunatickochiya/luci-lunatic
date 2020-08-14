@@ -25,9 +25,6 @@ msgstr "Aktivera UPnP-omdirigeringar"
 msgid "Advanced Settings"
 msgstr "Avancerade inställningar"
 
-msgid "Advertise as IGDv1 device instead of IGDv2"
-msgstr ""
-
 msgid "Allow adding forwards only to requesting ip addresses"
 msgstr ""
 
@@ -55,20 +52,14 @@ msgstr "Samlar in data..."
 msgid "Comment"
 msgstr "Kommentar"
 
-msgid "Delete"
-msgstr ""
-
-msgid "Description"
-msgstr ""
+msgid "Delete Redirect"
+msgstr "Ta bort omdirigering"
 
 msgid "Device UUID"
 msgstr "Enhetens UUID"
 
 msgid "Downlink"
 msgstr "Nerlänk"
-
-msgid "Enable IGDv1 mode"
-msgstr ""
 
 msgid "Enable NAT-PMP functionality"
 msgstr "Aktivera NAT-PMP-funktionalitet"
@@ -148,6 +139,3 @@ msgstr "Upplänk"
 
 msgid "Value in KByte/s, informational only"
 msgstr "Värde i KByte/s, endast informell"
-
-#~ msgid "Delete Redirect"
-#~ msgstr "Ta bort omdirigering"

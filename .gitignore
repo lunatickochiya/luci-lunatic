@@ -6,9 +6,4 @@ dist/
 *.po~
 /docs
 modules/luci-base/src/po2lmo
-*.tar.gz
-.directory
-/*.patch
-/.config*
-*.orig
-*.rej
+*.patch
