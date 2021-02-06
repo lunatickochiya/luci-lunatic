@@ -25,6 +25,10 @@ s:taboption("general", Flag, "domainneeded",
 	translate("Don't forward <abbr title=\"Domain Name System\">DNS</abbr>-Requests without " ..
 		"<abbr title=\"Domain Name System\">DNS</abbr>-Name"))
 
+s:taboption("general", Flag, "dns_redirect",
+	translate("DNS Redirect"),
+	translate("Redirect client DNS to dnsmasq"))
+
 s:taboption("general", Flag, "authoritative",
 	translate("Authoritative"),
 	translate("This is the only <abbr title=\"Dynamic Host Configuration Protocol\">DHCP</" ..
@@ -57,6 +61,11 @@ s:taboption("files", Flag, "nohosts",
 
 s:taboption("files", DynamicList, "addnhosts",
 	translate("Additional Hosts files")).optional = true
+
+aaaa = s:taboption("advanced", Flag, "filter_aaaa",
+	translate("Disable IPv6 DNS forwards"),
+	translate("Filter IPv6(AAAA) DNS query name resolve"))
+aaaa.optional = true
 
 qu = s:taboption("advanced", Flag, "quietdhcp",
 	translate("Suppress logging"),
@@ -210,6 +219,12 @@ cq.optional = true
 cq.datatype = "uinteger"
 cq.placeholder = 150
 
+minittl = s:taboption("advanced", Value, "mini_ttl",
+	translate("Minimum TTL to send to clients"),
+	translate("Modify DNS entries minimum TTL (max is 86400, 0 is no modify)"))
+minittl.optional = true
+minittl.datatype = "range(0,86400)"
+minittl.placeholder = 0
 
 s:taboption("tftp", Flag, "enable_tftp",
 	translate("Enable TFTP server")).optional = true
