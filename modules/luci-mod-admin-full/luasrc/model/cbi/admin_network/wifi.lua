@@ -233,9 +233,15 @@ if hwtype == "mac80211" then
 	legacyrates.rmempty = false
 	legacyrates.default = "1"
 
-	legacyrates = s:taboption("advanced", Flag, "mu_beamformer", translate("MU-MIMO"))
-	legacyrates.rmempty = false
-	legacyrates.default = "0"
+	mubeamformer = s:taboption("advanced", Flag, "mu_beamformer", translate("MU-MIMO"))
+	mubeamformer.rmempty = false
+	mubeamformer.default = "0"
+	
+	celldensity = s:taboption("advanced", ListValue, "cell_density", translate("Coverage cell density"), translate("Configures data rates based on the coverage cell density. Normal configures basic rates to 6, 12, 24 Mbps if legacy 802.11b rates are not used else to 5.5, 11 Mbps. High configures basic rates to 12, 24 Mbps if legacy 802.11b rates are not used else to the 11 Mbps rate. Very High configures 24 Mbps as the basic rate. Supported rates lower than the minimum basic rate are not offered."))
+	celldensity:value("0", translate("Disabled"))
+	celldensity:value("1", translate("Normal"))
+	celldensity:value("2", translate("High"))
+	celldensity:value("3", translate("Very High"))
 
 	s:taboption("advanced", Value, "distance", translate("Distance Optimization"),
 		translate("Distance to farthest network member in meters."))
@@ -265,6 +271,24 @@ if hwtype == "mac80211" then
 	beacon_int.optional = true
 	beacon_int.placeholder = 100
 	beacon_int.datatype = "range(15,65535)"
+	
+	rssi_reject_assoc_rssi = s:taboption("advanced", Value, "rssi_reject_assoc_rssi", translate("RSSI-based association rejection"),
+		translate("Reject STA association if RSSI is below given threshold (in dBm) Allowed range: -60 to -90 dBm; default = 0 (rejection disabled)"))
+		rssi_reject_assoc_rssi.datatype = "range(-90,-60)"
+		rssi_reject_assoc_rssi.optional = true
+		rssi_reject_assoc_rssi.default = 0
+		
+	rssi_reject_assoc_timeout = s:taboption("advanced", Value, "rssi_reject_assoc_timeout", translate("rssi_reject_assoc_timeout"),
+		translate("Association retry delay in seconds allowed by the STA if RSSI has not met the threshold (range: 0..255, default=30)."))
+		rssi_reject_assoc_timeout.datatype = "range(0,255)"
+		rssi_reject_assoc_timeout.optional = true
+		rssi_reject_assoc_timeout.default = 30
+		
+	rssi_ignore_probe_request = s:taboption("advanced", Value, "rssi_ignore_probe_request", translate("Ignore Probe Request"),
+		translate("Ignore Probe Request frames if RSSI is below given threshold (in dBm) Allowed range: -60 to -90 dBm; default = 0 (rejection disabled)"))
+		rssi_ignore_probe_request.datatype = "range(-90,-60)"
+		rssi_ignore_probe_request.optional = true
+		rssi_ignore_probe_request.default = 0
 end
 
 
