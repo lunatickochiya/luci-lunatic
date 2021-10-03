@@ -138,7 +138,6 @@ s.addremove = false
 s:tab("general", translate("General Setup"))
 s:tab("macfilter", translate("MAC-Filter"))
 s:tab("advanced", translate("Advanced Settings"))
-s:tab("rssi", translate("low RSSI disconnect"))
 
 st = s:taboption("general", DummyValue, "__status", translate("Status"))
 st.template = "admin_network/wifi_status"
@@ -267,9 +266,6 @@ if hwtype == "mac80211" then
 
 	vendor_vht = s:taboption("general", Flag, "vendor_vht", translate("Enable 256-QAM"),translate("802.11n 2.4Ghz Only"))
 	vendor_vht.default = vendor_vht.disabled
-	
-	low_rssi_disconnect = s:taboption("general", Flag, "low_rssi_disconnect", translate("Enable low RSSI disconnect"),translate("low RSSI disconnect may have bug"))
-	low_rssi_disconnect.default = low_rssi_disconnect.disabled
 	  
 	beacon_int = s:taboption("advanced", Value, "beacon_int", translate("Beacon Interval"))
 	beacon_int.optional = true
@@ -393,7 +389,6 @@ s:tab("general", translate("General Setup"))
 s:tab("encryption", translate("Wireless Security"))
 s:tab("macfilter", translate("MAC-Filter"))
 s:tab("advanced", translate("Advanced Settings"))
-s:tab("rssi", translate("low RSSI disconnect"))
 
 mode = s:taboption("general", ListValue, "mode", translate("Mode"))
 mode.override_values = true
@@ -525,46 +520,6 @@ if hwtype == "mac80211" then
 	wmm:depends({mode="ap"})
 	wmm:depends({mode="ap-wds"})
 	wmm.default = wmm.enabled
-
-	signal_connect = s:taboption("rssi", Value, "signal_connect",
-		translate("signal_connect"),
-		translate("signal accessible value"))
-	signal_connect:depends({mode="ap"},{mode="ap-wds"},{mode="mesh"})
-	signal_connect.placeholder = "-95"
-	--signal_connect.datatype = "range(-10,-95)"
-	signal_connect.default = "-95"
-
-	signal_stay = s:taboption("rssi", Value, "signal_stay",
-		translate("signal_stay"),
-		translate("signal automatic disconnection value"))
-	signal_stay:depends({mode="ap"},{mode="ap-wds"},{mode="mesh"})
-	signal_stay.placeholder = "-100"
-	--signal_stay.datatype = "range(-30,-100)"
-	signal_stay.default = "-100"
-
-	signal_strikes = s:taboption("rssi", Value, "signal_strikes",
-		translate("signal_strikes"),
-		translate("signal strikes times"))
-	signal_strikes:depends({mode="ap"},{mode="ap-wds"},{mode="mesh"})
-	signal_strikes.placeholder = "3"
-	signal_strikes.datatype = "range(1,10)"
-	signal_strikes.default = "3"
-
-	signal_poll_time = s:taboption("rssi", Value, "signal_poll_time",
-		translate("signal_poll_time"),
-		translate("signal polling times"))
-	signal_poll_time:depends({mode="ap"},{mode="ap-wds"},{mode="mesh"})
-	signal_poll_time.placeholder = "5"
-	signal_poll_time.datatype = "range(3,20)"
-	signal_poll_time.default = "5"
-
-	signal_drop_reason = s:taboption("rssi", Value, "signal_drop_reason",
-		translate("signal_drop_reason"),
-		translate("signal drop reason"))
-	signal_drop_reason:depends({mode="ap"},{mode="ap-wds"},{mode="mesh"})
-	signal_drop_reason.placeholder = "3"
-	signal_drop_reason.datatype = "range(3,5)"
-	signal_drop_reason.default = "3"
 
 	isolate = s:taboption("advanced", Flag, "isolate", translate("Isolate Clients"),
 	 translate("Prevents client-to-client communication"))
