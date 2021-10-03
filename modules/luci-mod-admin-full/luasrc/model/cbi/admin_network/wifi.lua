@@ -264,8 +264,8 @@ if hwtype == "mac80211" then
 	s:taboption("advanced", Flag, "noscan", translate("Force 40MHz mode"),
 		translate("Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!")).optional = true
 
-	  vendor_vht = s:taboption("general", Flag, "vendor_vht", translate("Enable 256-QAM"),translate("802.11n 2.4Ghz Only"))
-	  vendor_vht.default = vendor_vht.disabled
+	vendor_vht = s:taboption("general", Flag, "vendor_vht", translate("Enable 256-QAM"),translate("802.11n 2.4Ghz Only"))
+	vendor_vht.default = vendor_vht.disabled
 	  
 	beacon_int = s:taboption("advanced", Value, "beacon_int", translate("Beacon Interval"))
 	beacon_int.optional = true
@@ -274,7 +274,7 @@ if hwtype == "mac80211" then
 	
 	rssi_reject_assoc_rssi = s:taboption("advanced", Value, "rssi_reject_assoc_rssi", translate("RSSI-based association rejection"),
 		translate("Reject STA association if RSSI is below given threshold (in dBm) Allowed range: -60 to -90 dBm; default = 0 (rejection disabled)"))
-		rssi_reject_assoc_rssi.datatype = "range(-90,-60)"
+		rssi_reject_assoc_rssi.datatype = "range(-90,0)"
 		rssi_reject_assoc_rssi.optional = true
 		rssi_reject_assoc_rssi.default = 0
 		
@@ -286,7 +286,7 @@ if hwtype == "mac80211" then
 		
 	rssi_ignore_probe_request = s:taboption("advanced", Value, "rssi_ignore_probe_request", translate("Ignore Probe Request"),
 		translate("Ignore Probe Request frames if RSSI is below given threshold (in dBm) Allowed range: -60 to -90 dBm; default = 0 (rejection disabled)"))
-		rssi_ignore_probe_request.datatype = "range(-90,-60)"
+		rssi_ignore_probe_request.datatype = "range(-90,0)"
 		rssi_ignore_probe_request.optional = true
 		rssi_ignore_probe_request.default = 0
 end
