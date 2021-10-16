@@ -117,7 +117,7 @@ end
 function Cursor.get_first(self, conf, stype, opt, def)
 	local rv = def
 
-	self:foreach(conf, stype,
+	self:foreach(config, stype,
 		function(s)
 			local val = not opt and s['.name'] or s[opt]
 
