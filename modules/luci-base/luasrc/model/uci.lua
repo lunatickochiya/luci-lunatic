@@ -28,6 +28,16 @@ function cursor_state()
 	return cursor(nil, "/var/state")
 end
 
+local session_id = nil
+
+function get_session_id(self)
+	return session_id
+end
+
+function set_session_id(self, id)
+	session_id = id
+	return true
+end
 
 inst = cursor()
 inst_state = cursor_state()
