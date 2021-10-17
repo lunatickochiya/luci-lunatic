@@ -149,8 +149,8 @@ end
 
 local login_section = (s.device or "") .. "_" .. (s.ssid or "") .. "_" .. (s.bssid or "")
 login_section = login_section:gsub("[^%w_]", "_")
-local cmd = uci:get("travelmate", login_section, "command")
-local cmd_args_default = uci:get("travelmate", login_section, "command_args")
+local cmd = uci.get("travelmate", login_section, "command")
+local cmd_args_default = uci.get("travelmate", login_section, "command_args")
 cmd_list = m:field(ListValue, "cmdlist", translate("Auto Login Script"),
 	translate("External script reference which will be called for automated captive portal logins."))
 cmd_args = m:field(Value, "cmdargs", translate("Optional Arguments"),
@@ -189,10 +189,10 @@ function wssid.write(self, section, value)
 		end
 	end
 
-	if not uci:get("travelmate", login_section) and cmd_list:formvalue(section) ~= "none" then
+	if not uci.get("travelmate", login_section) and cmd_list:formvalue(section) ~= "none" then
 		uci:set("travelmate", login_section, "login")
 	end
-	if uci:get("travelmate", login_section) then
+	if uci.get("travelmate", login_section) then
 		uci:set("travelmate", login_section, "command", cmd_list:formvalue(section))
 		uci:set("travelmate", login_section, "command_args", cmd_args:formvalue(section))
 		uci:save("travelmate")

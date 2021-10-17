@@ -5,7 +5,7 @@ local http = require("luci.http")
 local cfg = http.formvalue("cfg")
 local dir = http.formvalue("dir")
 local uci = require("luci.model.uci").cursor()
-local trmiface = uci:get("travelmate", "global", "trm_iface") or "trm_wwan"
+local trmiface = uci.get("travelmate", "global", "trm_iface") or "trm_wwan"
 
 if cfg ~= nil then
 	local section = ""

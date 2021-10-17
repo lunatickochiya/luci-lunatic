@@ -6,7 +6,7 @@ local uci      = require("luci.model.uci").cursor()
 local http     = require("luci.http")
 local util     = require("luci.util")
 local scripts  = util.split(util.trim(util.exec("ls /etc/travelmate/*.login 2>/dev/null")), "\n", nil, true) or {}
-local trmiface = uci:get("travelmate", "global", "trm_iface") or "trm_wwan"
+local trmiface = uci.get("travelmate", "global", "trm_iface") or "trm_wwan"
 local encr_psk = {"psk", "psk2", "psk-mixed", "sae", "owe", "sae-mixed"}
 local encr_wpa = {"wpa", "wpa2", "wpa-mixed"}
 
@@ -157,8 +157,8 @@ end
 
 local login_section = (m.hidden.device or "") .. "_" .. (m.hidden.ssid or "") .. "_" .. (m.hidden.bssid or "")
 login_section = login_section:gsub("[^%w_]", "_")
-local cmd = uci:get("travelmate", login_section, "command")
-local cmd_args_default = uci:get("travelmate", login_section, "command_args")
+local cmd = uci.get("travelmate", login_section, "command")
+local cmd_args_default = uci.get("travelmate", login_section, "command_args")
 cmd_list = m:field(ListValue, "cmdlist", translate("Auto Login Script"),
 	translate("External script reference which will be called for automated captive portal logins."))
 cmd_args = m:field(Value, "cmdargs", translate("Optional Arguments"),
@@ -208,10 +208,10 @@ function wssid.write(self, section, value)
 		uci:set("wireless", newsection, "encryption", "none")
 	end
 
-	if not uci:get("travelmate", login_section) and cmd_list:formvalue(section) ~= "none" then
+	if not uci.get("travelmate", login_section) and cmd_list:formvalue(section) ~= "none" then
 		uci:set("travelmate", login_section, "login")
 	end
-	if uci:get("travelmate", login_section) then
+	if uci.get("travelmate", login_section) then
 		uci:set("travelmate", login_section, "command", cmd_list:formvalue(section))
 		uci:set("travelmate", login_section, "command_args", cmd_args:formvalue(section))
 		uci:save("travelmate")

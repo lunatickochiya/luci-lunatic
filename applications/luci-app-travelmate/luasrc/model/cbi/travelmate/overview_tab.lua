@@ -7,8 +7,8 @@ local util     = require("luci.util")
 local nw       = require("luci.model.network").init()
 local fw       = require("luci.model.firewall").init()
 local dump     = util.ubus("network.interface", "dump", {})
-local trmiface = uci:get("travelmate", "global", "trm_iface") or "trm_wwan"
-local uplink   = uci:get("network", trmiface) or ""
+local trmiface = uci.get("travelmate", "global", "trm_iface") or "trm_wwan"
+local uplink   = uci.get("network", trmiface) or ""
 
 
 m = Map("travelmate", translate("Travelmate"),

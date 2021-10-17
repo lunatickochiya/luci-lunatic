@@ -46,7 +46,7 @@ function status_update()
 	local rt_file
 	local content
 
-	rt_file = uci:get("travelmate", "global", "trm_rtfile") or "/tmp/trm_runtime.json"
+	rt_file = uci.get("travelmate", "global", "trm_rtfile") or "/tmp/trm_runtime.json"
 
 	if nixio.fs.access(rt_file) then
 		content = json.parse(nixio.fs.readfile(rt_file) or "")
