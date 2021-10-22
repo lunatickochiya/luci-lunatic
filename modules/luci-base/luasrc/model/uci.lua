@@ -124,7 +124,7 @@ function Cursor.get_list(self, config, section, option)
 	return {}
 end
 
-function Cursor.get_first(self, conf, stype, opt, def)
+function Cursor.get_first(self, config, stype, opt, def)
 	local rv = def
 
 	self:foreach(config, stype,
