@@ -866,9 +866,13 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	ieee80211k:depends({mode="ap", encryption="psk"})
 	ieee80211k:depends({mode="ap", encryption="psk2"})
 	ieee80211k:depends({mode="ap", encryption="psk-mixed"})
+	ieee80211k:depends({mode="ap", encryption="sae"})
+	ieee80211k:depends({mode="ap", encryption="sae-mixed"})
 	ieee80211k:depends({mode="ap-wds", encryption="psk"})
 	ieee80211k:depends({mode="ap-wds", encryption="psk2"})
 	ieee80211k:depends({mode="ap-wds", encryption="psk-mixed"})
+	ieee80211k:depends({mode="ap-wds", encryption="sae"})
+	ieee80211k:depends({mode="ap-wds", encryption="sae-mixed"})
 	ieee80211k.rmempty = true
 	
 	rrmneighborreport = s:taboption("encryption", Flag, "rrm_neighbor_report", translate("Enable neighbor report via radio measurements"))
@@ -891,9 +895,13 @@ if hwtype == "mac80211" or hwtype == "prism2" then
 	ieee80211v:depends({mode="ap", encryption="psk"})
 	ieee80211v:depends({mode="ap", encryption="psk2"})
 	ieee80211v:depends({mode="ap", encryption="psk-mixed"})
+	ieee80211v:depends({mode="ap", encryption="sae"})
+	ieee80211v:depends({mode="ap", encryption="sae-mixed"})
 	ieee80211v:depends({mode="ap-wds", encryption="psk"})
 	ieee80211v:depends({mode="ap-wds", encryption="psk2"})
 	ieee80211v:depends({mode="ap-wds", encryption="psk-mixed"})
+	ieee80211v:depends({mode="ap-wds", encryption="sae"})
+	ieee80211v:depends({mode="ap-wds", encryption="sae-mixed"})
 	ieee80211v.rmempty = true
 	
 
