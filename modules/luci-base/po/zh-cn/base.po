@@ -4117,3 +4117,6 @@ msgstr "域名（不带 HTTP(S)://）"
 
 msgid "Comments"
 msgstr "备注"
+
+msgid "Disconnect"
+msgstr "断开连接"
