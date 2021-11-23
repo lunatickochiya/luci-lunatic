@@ -358,15 +358,7 @@
 								);
 							else
 								tr.insertCell(-1).innerHTML = '?';
-
-							tr.insertCell(-1).innerHTML = String.format(
-								'<span class="ifacebadge" title="<%:Signal%>: %d <%:dBm%> / <%:Noise%>: %d <%:dBm%> / <%:SNR%>: %d"><img src="%s" /> %d / %d <%:dBm%></span>',
-								assoclist[j].signal, assoclist[j].noise, assoclist[j].signal - assoclist[j].noise,
-								icon,
-								assoclist[j].signal, assoclist[j].noise
-							);
-
-							tr.insertCell(-1).innerHTML = nowrap(wifirate(assoclist[j], true)) + '<br />' + nowrap(wifirate(assoclist[j], false));
+								
 							tr.insertCell(-1).innerHTML = String.format(
 								'<div class="cbi-button cbi-button-remove" onclick="disconnectClient(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')"><%:Disconnect%></div>',
 								iw.ifname,
@@ -375,6 +367,15 @@
 								5,
 								60000
 							);
+							
+							tr.insertCell(-1).innerHTML = String.format(
+								'<span class="ifacebadge" title="<%:Signal%>: %d <%:dBm%> / <%:Noise%>: %d <%:dBm%> / <%:SNR%>: %d"><img src="%s" /> %d / %d <%:dBm%></span>',
+								assoclist[j].signal, assoclist[j].noise, assoclist[j].signal - assoclist[j].noise,
+								icon,
+								assoclist[j].signal, assoclist[j].noise
+							);
+
+							tr.insertCell(-1).innerHTML = nowrap(wifirate(assoclist[j], true)) + '<br />' + nowrap(wifirate(assoclist[j], false));
 
 							rowstyle = (rowstyle == 1) ? 2 : 1;
 						}
@@ -480,9 +481,9 @@
 				<th class="cbi-section-table-cell"><%:SSID%></th>
 				<th class="cbi-section-table-cell"><%:MAC-Address%></th>
 				<th class="cbi-section-table-cell"><%:Host%></th>
+				<th class="cbi-section-table-cell"><%:Disconnect%></th>
 				<th class="cbi-section-table-cell"><%:Signal%> / <%:Noise%></th>
 				<th class="cbi-section-table-cell"><%:RX Rate%> / <%:TX Rate%></th>
-				<th class="cbi-section-table-cell"><%:Disconnect%></th>
 			</tr>
 			<tr class="cbi-section-table-row cbi-rowstyle-2">
 				<td class="cbi-value-field" colspan="6">
