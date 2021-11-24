@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-18 18:36+0000\n"
+"PO-Revision-Date: 2021-11-22 19:53+0000\n"
 "Last-Translator: Simona Iacob <s@zp1.net>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsaria2/ro/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 4.9.1-dev\n"
+"X-Generator: Weblate 4.10-dev\n"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:433
 msgid "<abbr title=\"Local Peer Discovery\">LPD</abbr> enabled"
@@ -147,22 +147,25 @@ msgstr "Director de descărcare"
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:417
 msgid "Enable IPv4 DHT functionality. It also enables UDP tracker support."
 msgstr ""
+"Activați funcționalitatea DHT IPv4. De asemenea, activează suportul pentru "
+"tracker UDP."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:427
 msgid "Enable IPv6 DHT functionality."
-msgstr ""
+msgstr "Activați funcționalitatea IPv6 DHT."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:435
 msgid "Enable Local Peer Discovery."
-msgstr ""
+msgstr "Activați Local Peer Discovery."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:444
 msgid "Enable Peer Exchange extension."
-msgstr ""
+msgstr "Activați extensia Peer Exchange."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:579
 msgid "Enable disk cache (in bytes), set 0 to disabled."
 msgstr ""
+"Activează memoria cache de disc (în octeți), setați 0 pentru dezactivare."
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:220
 msgid "Enable logging"
@@ -382,7 +385,7 @@ msgstr "Nici unul"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:232
 msgid "Notice"
-msgstr ""
+msgstr "Aviz"
 
 #: applications/luci-app-aria2/htdocs/luci-static/resources/view/aria2/config.js:242
 msgid "Pause"
