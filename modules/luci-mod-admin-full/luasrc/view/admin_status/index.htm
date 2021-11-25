@@ -110,7 +110,7 @@
 
 <%+header%>
 
-<script type="text/javascript" src="<%=resource%>/cbi.js?v=git-20.136.27016-6b99b03"></script>
+<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
 <script type="text/javascript">//<![CDATA[
 	function progressbar(v, m)
 	{
@@ -129,6 +129,23 @@
 		);
 	}
 
+	function disconnectClient(ifname, mac, deauth, reason, ban_time) {
+		if (reason == null || reason == 0)
+			reason = 1;
+
+		XHR.get('<%=url("admin/network/wireless_disconnect_client")%>', {
+				ifname: ifname,
+				addr: mac,
+				deauth: deauth,
+				reason: reason,
+				ban_time: ban_time
+			},
+			function(x, st) {
+
+			}
+		);
+	}
+	
 	function wifirate(bss, rx) {
 		var p = rx ? 'rx_' : 'tx_',
 		    s = '%.1f <%:Mbit/s%>, %d<%:MHz%>'
@@ -610,6 +627,14 @@
 					);
 
 					tr.insertCell(-1).innerHTML = wifirate(assoclist[i], true).nobr() + '<br />' + wifirate(assoclist[i], false).nobr();
+					tr.insertCell(-1).innerHTML = String.format(
+								'<div class="cbi-button cbi-button-remove" onclick="disconnectClient(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')"><%:Disconnect%></div>',
+								iw.ifname,
+								assoclist[j].bssid,
+								true,
+								5,
+								60000
+							);
 				}
 
 				if (ac.rows.length == 1)
@@ -812,6 +837,7 @@
 			<th class="cbi-section-table-cell"><%:Network%></th>
 			<th class="cbi-section-table-cell"><%:MAC-Address%></th>
 			<th class="cbi-section-table-cell"><%:Host%></th>
+			<th class="cbi-section-table-cell"><%:Disconnect%></th>
 			<th class="cbi-section-table-cell"><%:Signal%> / <%:Noise%></th>
 			<th class="cbi-section-table-cell"><%:RX Rate%> / <%:TX Rate%></th>
 		</tr>
