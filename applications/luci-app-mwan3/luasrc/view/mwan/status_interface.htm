@@ -6,6 +6,7 @@
 
 <%+header%>
 
+<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
 <ul class="cbi-tabmenu">
 	<li class="cbi-tab"><a href="<%=luci.dispatcher.build_url("admin/status/mwan/overview")%>"><%:Interface%></a></li>
 	<li class="cbi-tab-disabled"><a href="<%=luci.dispatcher.build_url("admin/status/mwan/detail")%>"><%:Detail%></a></li>
@@ -13,7 +14,6 @@
 	<li class="cbi-tab-disabled"><a href="<%=luci.dispatcher.build_url("admin/status/mwan/troubleshooting")%>"><%:Troubleshooting%></a></li>
 </ul>
 
-<script type="text/javascript" src="<%=resource%>/cbi.js"></script>
 
 <div class="cbi-map">
 	<%+mwan/overview_status_interface%>
