@@ -70,7 +70,7 @@ PKG_VERSION?=$(if $(DUMP),x,$(strip $(shell \
 PKG_GITBRANCH?=$(if $(DUMP),x,$(strip $(shell \
 	variant="LuCI"; \
 	if git log -1 >/dev/null 2>/dev/null; then \
-		branch="17.01 Lienol"; \
+		branch="17.01"; \
 		if [ "$$branch" != "master" ]; then \
 			variant="LuCI $$branch"; \
 		else \

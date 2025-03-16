@@ -719,6 +719,12 @@
 					Math.floor(info.memory.total / 1048576) + " <%:MB%>"
 				);
 
+			if (e = document.getElementById('memfree'))
+			e.innerHTML = progressbar(
+				(info.memory.free / 1024) + " <%:kB%>",
+				(info.memory.total / 1024) + " <%:kB%>"
+			);
+			
 			if (e = document.getElementById('swaptotal'))
 				e.innerHTML = progressbar(
 					Math.floor(info.swap.free / 1048576) + " <%:MB%>",
@@ -761,16 +767,25 @@
 </fieldset>
 
 <fieldset class="cbi-section">
-	<legend><%:Total Available%></legend>
+	<legend><%:Memory%></legend>
 
 	<table width="100%" cellspacing="10">
-		<!-- <tr><td width="33%">CPU</td><td id="cpu_free">-</td></tr> -->
-		<tr><td width="33%"><%:Memory%></td><td id="memtotal">-</td></tr>
-		<% if swapinfo.total > 0 then %>
-			<tr><td width="33%"><%:Swap%></td><td id="swaptotal">-</td></tr>
-		<% end %>
+		<tr><td width="33%"><%:Total Available%></td><td id="memtotal">-</td></tr>
+		<tr><td width="33%"><%:Free%></td><td id="memfree">-</td></tr>
+		<tr><td width="33%"><%:Buffered%></td><td id="membuff">-</td></tr>
 	</table>
 </fieldset>
+
+<% if swapinfo.total > 0 then %>
+<fieldset class="cbi-section">
+	<legend><%:Swap%></legend>
+
+	<table width="100%" cellspacing="10">
+		<tr><td width="33%"><%:Total Available%></td><td id="swaptotal">-</td></tr>
+		<tr><td width="33%"><%:Free%></td><td id="swapfree">-</td></tr>
+	</table>
+</fieldset>
+<% end %>
 
 <fieldset class="cbi-section">
 	<legend><%:Network%></legend>
