@@ -1,4 +1,4 @@
--- Copyright 2017-2018 Dirk Brenken (dev@brenken.org)
+-- Copyright 2017-2019 Dirk Brenken (dev@brenken.org)
 -- This is free software, licensed under the Apache License, Version 2.0
 
 module("luci.controller.travelmate", package.seeall)
@@ -27,7 +27,6 @@ function index()
 	entry({"admin", "services", "travelmate", "logread"}, call("logread"), nil).leaf = true
 	entry({"admin", "services", "travelmate", "status"}, call("status_update"), nil).leaf = true
 	entry({"admin", "services", "travelmate", "action"}, call("trm_action"), nil).leaf = true
-	entry({"admin", "services", "travelmate", "apqr"}, template("travelmate/ap_qr")).leaf = true
 	entry({"admin", "services", "travelmate", "wifiscan"}, template("travelmate/wifi_scan")).leaf = true
 	entry({"admin", "services", "travelmate", "wifiadd"}, form("travelmate/wifi_add", {hideresetbtn=true, hidesavebtn=true})).leaf = true
 	entry({"admin", "services", "travelmate", "wifiedit"}, form("travelmate/wifi_edit", {hideresetbtn=true, hidesavebtn=true})).leaf = true
@@ -47,7 +46,7 @@ function status_update()
 	local rt_file
 	local content
 
-	rt_file = uci:get("travelmate", "global", "trm_rtfile") or "/tmp/trm_runtime.json"
+	rt_file = uci.get("travelmate", "global", "trm_rtfile") or "/tmp/trm_runtime.json"
 
 	if nixio.fs.access(rt_file) then
 		content = json.parse(nixio.fs.readfile(rt_file) or "")
@@ -57,14 +56,8 @@ function status_update()
 end
 
 function logread()
-	local content
+	local content = util.trim(util.exec("logread -e 'travelmate-'")) or ""
 
-	if nixio.fs.access("/var/log/messages") then
-		content = util.trim(util.exec("grep -F 'travelmate-' /var/log/messages"))
-	else
-		content = util.trim(util.exec("logread -e 'travelmate-'"))
-	end
-	
 	if content == "" then
 		content = "No travelmate related logs yet!"
 	end
