@@ -2,7 +2,26 @@
 -- Copyright 2008 Jo-Philipp Wich <jow@openwrt.org>
 -- Licensed to the public under the Apache License 2.0.
 
-m = Map("samba", translate("Network Shares"))
+local state_msg = ""
+local running=(luci.sys.call("pidof smbd > /dev/null") == 0)
+
+if running then
+	state_msg = "<b><font color=\"green\">" .. translate("smbd 运行中") .. "</font></b>"
+else
+	state_msg = "<b><font color=\"red\">" .. translate("smbd 未运行") .. "</font></b>"
+end
+
+local state_msg1 = ""
+local running1=(luci.sys.call("pidof nmbd > /dev/null") == 0)
+
+if running1 then
+	state_msg1 = "<b><font color=\"blue\">" .. translate("nmbd 运行中") .. "</font></b>"
+else
+	state_msg1 = "<b><font color=\"red\">" .. translate("nmbd 未运行") .. "</font></b>"
+end
+
+m = Map("samba", translate("Network Shares"),
+translate("状态：").. state_msg.. state_msg1)
 
 s = m:section(TypedSection, "samba", "Samba")
 s.anonymous = true
