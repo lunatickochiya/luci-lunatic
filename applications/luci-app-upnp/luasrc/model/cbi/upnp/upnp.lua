@@ -2,8 +2,17 @@
 -- Copyright 2008-2011 Jo-Philipp Wich <jow@openwrt.org>
 -- Licensed to the public under the Apache License 2.0.
 
+local state_msg = ""
+local running=(luci.sys.call("pidof miniupnpd > /dev/null") == 0)
+
+if running then
+	state_msg = "<b><font color=\"green\">" .. translate("Status：upnpd running") .. "</font></b>"
+else
+	state_msg = "<b><font color=\"red\">" .. translate("Status：upnpd not running") .. "</font></b>"
+end
+
 m = Map("upnpd", luci.util.pcdata(translate("Universal Plug & Play")),
-	translate("UPnP allows clients in the local network to automatically configure the router."))
+	translate("UPnP allows clients in the local network to automatically configure the router.").. state_msg)
 
 m:section(SimpleSection).template  = "upnp_status"
 
