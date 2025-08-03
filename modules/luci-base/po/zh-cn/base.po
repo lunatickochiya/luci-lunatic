@@ -4245,3 +4245,8 @@ msgstr "WDS PHY 模式"
 
 msgid "If GREENFIELD seems to be unstable,try to use OFDM instead.VHT is only available for 11AC devices."
 msgstr "如果 GREENFIELD 看起来不稳定，请尝试改用 OFDM。VHT 仅适用于 11AC 设备。"
+msgid "Designated master"
+msgstr "指定为主接口"
+
+msgid "Set this interface as master for RA and DHCPv6 relaying as well as NDP proxying."
+msgstr "将此接口设为 RA 和 DHCPv6 中继以及 NDP 代理的主接口。"
