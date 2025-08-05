@@ -1435,8 +1435,8 @@ msgstr "Hermes 802.11b 无线控制器"
 msgid "Hide <abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"
 msgstr "隐藏 <abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"
 
-msgid "Inactive"
-msgstr "活动状态"
+msgid "ConnectedTime"
+msgstr "连接时间"
 
 msgid "Host"
 msgstr "主机"
@@ -4244,7 +4244,8 @@ msgid "WDS PHY Mode"
 msgstr "WDS PHY 模式"
 
 msgid "If GREENFIELD seems to be unstable,try to use OFDM instead.VHT is only available for 11AC devices."
-msgstr "如果 GREENFIELD 看起来不稳定，请尝试改用 OFDM。VHT 仅适用于 11AC 设备。"
+msgstr "如果 GREENFIELD 运行不稳定，请尝试改用 OFDM。VHT 仅适用于 11AC 设备。"
+
 msgid "Designated master"
 msgstr "指定为主接口"
 
