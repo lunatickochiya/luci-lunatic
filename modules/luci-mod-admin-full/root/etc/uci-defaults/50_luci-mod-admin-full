@@ -22,6 +22,18 @@ fi
 [ -n "$(opkg list-installed | grep 'autocore-arm')" ] && {
 	[ -f /usr/lib/lua/luci/view/admin_status/index_arm.htm ] && mv -f /usr/lib/lua/luci/view/admin_status/index_arm.htm /usr/lib/lua/luci/view/admin_status/index.htm
 }
+[ -n "$(opkg list-installed | grep 'autoset-uci-rockchip')" ] && {
+	[ -f /usr/lib/lua/luci/view/admin_status/index_arm.htm ] && mv -f /usr/lib/lua/luci/view/admin_status/index_arm.htm /usr/lib/lua/luci/view/admin_status/index.htm
+}
+[ -n "$(opkg list-installed | grep 'autoset-uci-mediatek')" ] && {
+	[ -f /usr/lib/lua/luci/view/admin_status/index_arm.htm ] && mv -f /usr/lib/lua/luci/view/admin_status/index_arm.htm /usr/lib/lua/luci/view/admin_status/index.htm
+}
+[ -n "$(opkg list-installed | grep 'autoset-uci-ipq')" ] && {
+	[ -f /usr/lib/lua/luci/view/admin_status/index_arm.htm ] && mv -f /usr/lib/lua/luci/view/admin_status/index_arm.htm /usr/lib/lua/luci/view/admin_status/index.htm
+}
+[ -n "$(opkg list-installed | grep 'autoset-uci-meson')" ] && {
+	[ -f /usr/lib/lua/luci/view/admin_status/index_arm.htm ] && mv -f /usr/lib/lua/luci/view/admin_status/index_arm.htm /usr/lib/lua/luci/view/admin_status/index.htm
+}
 [ -n "$(opkg list-installed | grep 'autocore-x86')" ] && {
 	[ -f /usr/lib/lua/luci/view/admin_status/index_x86.htm ] && mv -f /usr/lib/lua/luci/view/admin_status/index_x86.htm /usr/lib/lua/luci/view/admin_status/index.htm
 }
