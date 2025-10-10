@@ -14,7 +14,7 @@ local space_used = space_total - space_free
 
 local free_byte = space_free * fstat.frsize
 
-local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity, mode
+local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity, mode, online_wallpaper
 if nxfs.access('/etc/config/argon') then
 	primary = uci:get_first('argon', 'global', 'primary')
 	dark_primary = uci:get_first('argon', 'global', 'dark_primary')
@@ -23,7 +23,7 @@ if nxfs.access('/etc/config/argon') then
 	blur_opacity = uci:get_first('argon', 'global', 'transparency')
 	blur_opacity_dark = uci:get_first('argon', 'global', 'transparency_dark')
 	mode = uci:get_first('argon', 'global', 'mode')
-	bing_background = uci:get_first('argon', 'global', 'bing_background')
+	online_wallpaper = uci:get_first('argon', 'global', 'online_wallpaper')
 end
 
 function glob(...)
@@ -55,11 +55,11 @@ br.reset = false
 br.submit = false
 s = br:section(SimpleSection) 
 
-o = s:option(ListValue, 'bing_background', translate('Wallpaper Source'))
-o:value('0', translate('Built-in'))
-o:value('1', translate('Bing Wallpapers'))
-o:value('2', translate('ACG'))
-o.default = bing_background
+o = s:option(ListValue, 'online_wallpaper', translate('Wallpaper Source'))
+o:value('none', translate('Built-in'))
+o:value('bing', translate('Bing Wallpapers'))
+o:value('ghser', translate('ACG'))
+o.default = none
 o.rmempty = false
 
 o = s:option(ListValue, 'mode', translate('Theme mode'))
