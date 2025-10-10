@@ -5742,3 +5742,6 @@ msgstr "已传输字节数"
 
 msgid "Transmitted packets"
 msgstr "已传输的数据包"
+
+msgid "Temperature"
+msgstr "温度"

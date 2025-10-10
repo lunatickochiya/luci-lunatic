@@ -55,10 +55,12 @@
 		):match("%d+")) or 4096
 		
 		local cpu_usage = luci.sys.exec("/sbin/usage") or "0%"
+		local temp_info = luci.sys.exec("/sbin/tempinfo") or "?"
 		local cpu_info = luci.sys.exec("/sbin/cpuinfo") or "?"
 
 		local rv = {
 			cpuusage   = cpu_usage,
+			tempinfo   = temp_info,
 			cpuinfo    = cpu_info,
 			ethinfo    = require "luci.model.ethinfo".getAllInfo(),
 			uptime     = sysinfo.uptime or 0,
@@ -796,6 +798,9 @@
 			if (e = document.getElementById('cpuusage'))
 				e.innerHTML = info.cpuusage;
 
+			if (e = document.getElementById('tempinfo'))
+				e.innerHTML = info.tempinfo;
+
 			if (e = document.getElementById('cpuinfo'))
 				e.innerHTML = info.cpuinfo;
 
@@ -900,6 +905,7 @@
 			<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)
 		</td></tr>
 		<tr><td width="33%"><%:Kernel Version%></td><td><%=unameinfo.release or "?"%></td></tr>
+		<tr><td width="33%"><%:Temperature%></td><td id="tempinfo">-</td></tr>
 		<tr><td width="33%"><%:Local Time%></td><td id="localtime">-</td></tr>
 		<tr><td width="33%"><%:Uptime%></td><td id="uptime">-</td></tr>
 		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
