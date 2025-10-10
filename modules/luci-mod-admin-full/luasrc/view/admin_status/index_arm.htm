@@ -893,7 +893,7 @@
 <h2 name="content"><%:Status%></h2>
 
 <fieldset class="cbi-section">
-	<legend><%:System%></legend>
+	<h3><%:System%></h3>
 
 	<table width="100%" cellspacing="10">
 		<tr><td width="33%"><%:Hostname%></td><td><%=luci.sys.hostname() or "?"%></td></tr>
@@ -911,12 +911,12 @@
 		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
 		<tr><td width="33%"><%:CPU Used%></td><td id="cpuusage">-</td></tr>
 		<tr><td width="33%"><%:固件信息%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件信息" value="<%:LunaticUrey_Build_With_Backports%>" -</td></tr>
-		<tr><td width="33%"><%:固件更新%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件更新" value="<%:GITHUB点击打开链接%>" onclick="window.open('https://github.com/lunatickochiya/AP-action')" /></td></tr>
+		<tr><td width="33%"><%:固件更新%></td><td ><input type="button" class="cbi-button cbi-button-apply" name="固件更新" value="<%:点击打开链接%>" onclick="window.open('https://github.com/lunatickochiya/AP-action')" /></td></tr>
 	</table>
 </fieldset>
 
 <fieldset class="cbi-section">
-	<legend><%:Memory%></legend>
+	<h3><%:Memory%></h3>
 
 	<table width="100%" cellspacing="10">
 		<tr><td width="33%"><%:Total Available%></td><td id="memtotal">-</td></tr>
@@ -927,7 +927,7 @@
 
 <% if swapinfo.total > 0 then %>
 <fieldset class="cbi-section">
-	<legend><%:Swap%></legend>
+	<h3><%:Swap%></h3>
 
 	<table width="100%" cellspacing="10">
 		<tr><td width="33%"><%:Total Available%></td><td id="swaptotal">-</td></tr>
@@ -938,7 +938,7 @@
 
 <% if not has_switch then %>
 <fieldset class="cbi-section" id="ethinfo-fieldset" style="display: none">
-	<legend><%:Interfaces%></legend>
+	<h3><%:Interfaces%></h3>
 
 	<script type="text/template" id="ethinfo-template">
 		<div class="ifacebox" style="margin:.25em;min-width:70px;max-width:100px">
@@ -965,7 +965,7 @@
 <% end %>
 
 <fieldset class="cbi-section">
-	<legend><%:Network%></legend>
+	<h3><%:Network%></h3>
 
 	<table width="100%" cellspacing="10">
 		<tr><td width="33%" style="vertical-align:top"><%:IPv4 WAN Status%></td><td>
@@ -988,7 +988,7 @@
 
 <% if has_dhcp then %>
 <fieldset class="cbi-section">
-	<legend><%:DHCP Leases%></legend>
+	<h3><%:DHCP Leases%></h3>
 
 	<table class="cbi-section-table" id="lease_status_table">
 		<tr class="cbi-section-table-titles">
@@ -1005,7 +1005,7 @@
 
 <% if has_ipv6 then %>
 <fieldset class="cbi-section" style="display:none">
-	<legend><%:DHCPv6 Leases%></legend>
+	<h3><%:DHCPv6 Leases%></h3>
 
 	<table class="cbi-section-table" id="lease6_status_table">
 		<tr class="cbi-section-table-titles">
@@ -1024,7 +1024,7 @@
 
 <% if has_ipv6 then %>
 <fieldset class="cbi-section" style="display:none">
-	<legend><%:IPv6 Neighbours%></legend>
+	<h3><%:IPv6 Neighbours%></h3>
 	
 	<table class="cbi-section-table" id="ipv6_neighbors_status_table">
 		<tr class="cbi-section-table-titles">
@@ -1042,7 +1042,7 @@
 
 <% if has_dsl then %>
 <fieldset class="cbi-section">
-       <legend><%:DSL%></legend>
+       <h3><%:DSL%></h3>
        <table width="100%" cellspacing="10">
                <tr><td width="33%" style="vertical-align:top"><%:DSL Status%></td><td>
                        <table><tr>
@@ -1056,12 +1056,31 @@
 
 <% if has_wifi then %>
 <fieldset class="cbi-section">
-	<legend><%:Wireless%></legend>
+	<h3><%:Wireless%></h3>
 
 	<table id="wifi_status_table" width="100%" cellspacing="10">
 		<tr><td><em><%:Collecting data...%></em></td></tr>
 	</table>
 </fieldset>
+
+<fieldset class="cbi-section">
+	<h3><%:Associated Stations%></h3>
+
+	<table class="cbi-section-table valign-middle" id="wifi_assoc_table">
+		<tr class="cbi-section-table-titles">
+			<th class="cbi-section-table-cell">&#160;</th>
+			<th class="cbi-section-table-cell"><%:Network%></th>
+			<th class="cbi-section-table-cell"><%:MAC-Address%></th>
+			<th class="cbi-section-table-cell"><%:Host%></th>
+			<th class="cbi-section-table-cell"><%:Signal%> / <%:Noise%></th>
+			<th class="cbi-section-table-cell"><%:RX Rate%> / <%:TX Rate%></th>
+		</tr>
+		<tr class="cbi-section-table-row">
+			<td colspan="6"><em><br /><%:Collecting data...%></em></td>
+		</tr>
+	</table>
+</fieldset>
+
 <% end %>
 
 <%+footer%>
